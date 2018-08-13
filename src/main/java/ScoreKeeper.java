@@ -1,15 +1,23 @@
 public class ScoreKeeper {
 
-    public void scoreTeamA1() {
+    private int pointsTeamA;
+    private int pointsTeamB;
 
+    public ScoreKeeper() {
+        pointsTeamA = 0;
+        pointsTeamB = 0;
+    }
+
+    public void scoreTeamA1() {
+        pointsTeamA++;
     }
 
     public void scoreTeamA2() {
-
+        pointsTeamA += 2;
     }
 
     public void scoreTeamA3() {
-
+        pointsTeamA += 3;
     }
 
     public void scoreTeamB1() {
@@ -25,6 +33,7 @@ public class ScoreKeeper {
     }
 
     public String getScore() {
-        return "000:000";
+
+        return String.format("%03d:%03d",pointsTeamA, pointsTeamB);
     }
 }
