@@ -25,6 +25,6 @@ public class ScoreKeeper {
     }
 
     public String getScore() {
-        return null;
+        return "000:000";
     }
 }
