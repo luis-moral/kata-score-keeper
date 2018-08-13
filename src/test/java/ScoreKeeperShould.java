@@ -25,4 +25,18 @@ public class ScoreKeeperShould {
 
         assertThat(teamScoreA.getPoints()).isEqualTo(6);
     }
+
+    @Test
+    public void
+    should_display_correct_score_when_adding_points_to_a_team_B() {
+        TeamScore teamScoreA = new TeamScore();
+        TeamScore teamScoreB = new TeamScore();
+
+        ScoreKeeper scoreKeeper = new ScoreKeeper(teamScoreA, teamScoreB);
+        scoreKeeper.scoreTeamB1();
+        scoreKeeper.scoreTeamB2();
+        scoreKeeper.scoreTeamB3();
+
+        assertThat(teamScoreB.getPoints()).isEqualTo(6);
+    }
 }
