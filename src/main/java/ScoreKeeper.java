@@ -1,23 +1,23 @@
 public class ScoreKeeper {
 
-    private int pointsTeamA;
-    private int pointsTeamB;
+    private final TeamScore teamScoreA;
+    private final TeamScore teamScoreB;
 
-    public ScoreKeeper() {
-        pointsTeamA = 0;
-        pointsTeamB = 0;
+    public ScoreKeeper(TeamScore teamScoreA, TeamScore teamScoreB) {
+        this.teamScoreA = teamScoreA;
+        this.teamScoreB = teamScoreB;
     }
 
     public void scoreTeamA1() {
-        pointsTeamA++;
+        teamScoreA.addPoints(1);
     }
 
     public void scoreTeamA2() {
-        pointsTeamA += 2;
+        teamScoreA.addPoints(2);
     }
 
     public void scoreTeamA3() {
-        pointsTeamA += 3;
+        teamScoreA.addPoints(3);
     }
 
     public void scoreTeamB1() {
@@ -34,6 +34,6 @@ public class ScoreKeeper {
 
     public String getScore() {
 
-        return String.format("%03d:%03d",pointsTeamA, pointsTeamB);
+        return String.format("%03d:%03d", teamScoreA.getPoints(), teamScoreB.getPoints());
     }
 }
